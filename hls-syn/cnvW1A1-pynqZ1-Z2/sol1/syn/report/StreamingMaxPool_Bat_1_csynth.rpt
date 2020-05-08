@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vivado HLS Report for 'StreamingMaxPool_Bat_1'
+================================================================
+* Date:           Sat Apr 25 13:06:02 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        cnvW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.644 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------+--------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                              |                    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |           Instance           |       Module       |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +------------------------------+--------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_StreamingMaxPool_1_fu_55  |StreamingMaxPool_1  |      163|      163| 0.815 us | 0.815 us |  163|  163|   none  |
+        +------------------------------+--------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |        ?|        ?|       165|          -|          -|     ?|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     59|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        8|      -|     431|    575|    0|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     84|    -|
+|Register         |        -|      -|     102|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        8|      0|     533|    718|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        2|      0|   ~0   |      1|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+--------------------+---------+-------+-----+-----+-----+
+    |           Instance           |       Module       | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +------------------------------+--------------------+---------+-------+-----+-----+-----+
+    |grp_StreamingMaxPool_1_fu_55  |StreamingMaxPool_1  |        8|      0|  431|  575|    0|
+    +------------------------------+--------------------+---------+-------+-----+-----+-----+
+    |Total                         |                    |        8|      0|  431|  575|    0|
+    +------------------------------+--------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |rep_fu_68_p2         |     +    |      0|  0|  39|          32|           1|
+    |icmp_ln109_fu_63_p2  |   icmp   |      0|  0|  18|          32|          32|
+    |ap_block_state1      |    or    |      0|  0|   2|           1|           1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  59|          65|          34|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+----+-----------+-----+-----------+
+    |        Name       | LUT| Input Size| Bits| Total Bits|
+    +-------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm          |  21|          4|    1|          4|
+    |ap_done            |   9|          2|    1|          2|
+    |in_V_V_read        |   9|          2|    1|          2|
+    |numReps_blk_n      |   9|          2|    1|          2|
+    |numReps_out_blk_n  |   9|          2|    1|          2|
+    |out_V_V_write      |   9|          2|    1|          2|
+    |real_start         |   9|          2|    1|          2|
+    |rep_0_i_reg_44     |   9|          2|   32|         64|
+    +-------------------+----+-----------+-----+-----------+
+    |Total              |  84|         18|   39|         80|
+    +-------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+----+----+-----+-----------+
+    |                    Name                   | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                  |   3|   0|    3|          0|
+    |ap_done_reg                                |   1|   0|    1|          0|
+    |grp_StreamingMaxPool_1_fu_55_ap_start_reg  |   1|   0|    1|          0|
+    |numReps_read_reg_74                        |  32|   0|   32|          0|
+    |rep_0_i_reg_44                             |  32|   0|   32|          0|
+    |rep_reg_82                                 |  32|   0|   32|          0|
+    |start_once_reg                             |   1|   0|    1|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+    |Total                                      | 102|   0|  102|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk              |  in |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|ap_rst              |  in |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|ap_start            |  in |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|start_full_n        |  in |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|ap_done             | out |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|ap_continue         |  in |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|ap_idle             | out |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|ap_ready            | out |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|start_out           | out |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|start_write         | out |    1| ap_ctrl_hs | StreamingMaxPool_Bat.1 | return value |
+|in_V_V_dout         |  in |  128|   ap_fifo  |         in_V_V         |    pointer   |
+|in_V_V_empty_n      |  in |    1|   ap_fifo  |         in_V_V         |    pointer   |
+|in_V_V_read         | out |    1|   ap_fifo  |         in_V_V         |    pointer   |
+|out_V_V_din         | out |  128|   ap_fifo  |         out_V_V        |    pointer   |
+|out_V_V_full_n      |  in |    1|   ap_fifo  |         out_V_V        |    pointer   |
+|out_V_V_write       | out |    1|   ap_fifo  |         out_V_V        |    pointer   |
+|numReps_dout        |  in |   32|   ap_fifo  |         numReps        |    pointer   |
+|numReps_empty_n     |  in |    1|   ap_fifo  |         numReps        |    pointer   |
+|numReps_read        | out |    1|   ap_fifo  |         numReps        |    pointer   |
+|numReps_out_din     | out |   32|   ap_fifo  |       numReps_out      |    pointer   |
+|numReps_out_full_n  |  in |    1|   ap_fifo  |       numReps_out      |    pointer   |
+|numReps_out_write   | out |    1|   ap_fifo  |       numReps_out      |    pointer   |
++--------------------+-----+-----+------------+------------------------+--------------+
+

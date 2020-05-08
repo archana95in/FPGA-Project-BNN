@@ -1,0 +1,282 @@
+
+
+================================================================
+== Vivado HLS Report for 'ConvolutionInputGene'
+================================================================
+* Date:           Sat Apr 25 13:04:16 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        cnvW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 8.101 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |        ?|        ?|         4|          1|          1|     ?|    yes   |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|   1233|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      2|    9053|   2698|    -|
+|Memory           |        4|      -|       0|      0|    0|
+|Multiplexer      |        -|      -|       -|    314|    -|
+|Register         |        -|      -|     583|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        4|      2|    9636|   4245|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        1|   ~0  |       9|      7|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+------+------+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
+    +--------------------------+----------------------+---------+-------+------+------+-----+
+    |BlackBoxJam_mul_3ocq_U93  |BlackBoxJam_mul_3ocq  |        0|      2|   215|     1|    0|
+    |BlackBoxJam_mux_4pcA_U94  |BlackBoxJam_mux_4pcA  |        0|      0|  8838|  2697|    0|
+    +--------------------------+----------------------+---------+-------+------+------+-----+
+    |Total                     |                      |        0|      2|  9053|  2698|    0|
+    +--------------------------+----------------------+---------+-------+------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +----------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |     Memory     |        Module        | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |inputBuf_0_V_U  |ConvolutionInputGkbM  |        1|  0|   0|    0|    60|   32|     1|         1920|
+    |inputBuf_1_V_U  |ConvolutionInputGkbM  |        1|  0|   0|    0|    60|   32|     1|         1920|
+    |inputBuf_2_V_U  |ConvolutionInputGkbM  |        1|  0|   0|    0|    60|   32|     1|         1920|
+    |inputBuf_3_V_U  |ConvolutionInputGkbM  |        1|  0|   0|    0|    60|   32|     1|         1920|
+    +----------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total           |                      |        4|  0|   0|    0|   240|  128|     4|         7680|
+    +----------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |add_ln104_fu_430_p2                |     +    |      0|  0|  53|          46|           1|
+    |add_ln105_fu_442_p2                |     +    |      0|  0|  19|          14|           1|
+    |add_ln128_fu_519_p2                |     +    |      0|  0|  38|          31|          31|
+    |add_ln129_1_fu_756_p2              |     +    |      0|  0|  16|           1|           2|
+    |add_ln163_fu_661_p2                |     +    |      0|  0|  15|           5|           1|
+    |count_simd_fu_547_p2               |     +    |      0|  0|  39|           1|          32|
+    |counter_internal_blo_24_fu_700_p2  |     +    |      0|  0|  39|          32|           1|
+    |current_block_write_32_fu_807_p2   |     +    |      0|  0|  39|          32|           1|
+    |current_block_write_fu_851_p2      |     +    |      0|  0|  39|          32|           1|
+    |current_line_in_bloc_fu_533_p2     |     +    |      0|  0|  39|          32|          32|
+    |grp_fu_368_p2                      |     +    |      0|  0|  39|          32|           1|
+    |inp_fu_725_p2                      |     +    |      0|  0|  39|          32|           1|
+    |k_x_fu_564_p2                      |     +    |      0|  0|  39|          32|           1|
+    |k_y_fu_505_p2                      |     +    |      0|  0|  39|           1|          32|
+    |ofm_x_fu_595_p2                    |     +    |      0|  0|  39|          32|           1|
+    |ofm_y_fu_615_p2                    |     +    |      0|  0|  39|          32|           1|
+    |outElem_V_fu_767_p5                |     +    |      0|  0|  16|           2|           2|
+    |read_block_fu_741_p2               |     +    |      0|  0|  39|          32|           1|
+    |and_ln153_fu_655_p2                |    and   |      0|  0|   2|           1|           1|
+    |ap_block_pp0                       |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state10_pp0_stage0_iter3  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_436                   |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_448                   |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_459                   |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_470                   |    and   |      0|  0|   2|           1|           1|
+    |ap_enable_state8_pp0_iter1_stage0  |    and   |      0|  0|   2|           1|           1|
+    |ap_enable_state9_pp0_iter2_stage0  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op168_load_state9     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op178_read_state9     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op213_store_state9    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op215_store_state9    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op217_store_state9    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op219_store_state9    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op227_write_state10   |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op84_load_state8      |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln104_fu_425_p2               |   icmp   |      0|  0|  24|          46|          46|
+    |icmp_ln105_fu_436_p2               |   icmp   |      0|  0|  13|          14|          13|
+    |icmp_ln107_fu_474_p2               |   icmp   |      0|  0|  18|          32|           8|
+    |icmp_ln113_fu_380_p2               |   icmp   |      0|  0|  18|          32|           6|
+    |icmp_ln116_fu_857_p2               |   icmp   |      0|  0|  18|          32|           3|
+    |icmp_ln123_fu_483_p2               |   icmp   |      0|  0|  18|          32|           9|
+    |icmp_ln132_fu_553_p2               |   icmp   |      0|  0|  18|          32|           2|
+    |icmp_ln135_fu_570_p2               |   icmp   |      0|  0|  18|          32|           2|
+    |icmp_ln138_fu_581_p2               |   icmp   |      0|  0|  18|          32|           2|
+    |icmp_ln141_fu_601_p2               |   icmp   |      0|  0|  18|          32|           5|
+    |icmp_ln144_fu_621_p2               |   icmp   |      0|  0|  18|          32|           5|
+    |icmp_ln153_1_fu_649_p2             |   icmp   |      0|  0|  18|          32|           5|
+    |icmp_ln153_fu_643_p2               |   icmp   |      0|  0|  18|          32|           6|
+    |icmp_ln160_fu_374_p2               |   icmp   |      0|  0|  18|          32|           6|
+    |icmp_ln165_fu_813_p2               |   icmp   |      0|  0|  18|          32|           3|
+    |icmp_ln172_fu_706_p2               |   icmp   |      0|  0|  18|          32|           9|
+    |ap_block_pp0_stage0_01001          |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1                    |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state9_pp0_stage0_iter2   |    or    |      0|  0|   2|           1|           1|
+    |current_block_write_31_fu_863_p3   |  select  |      0|  0|  32|           1|           1|
+    |current_block_write_33_fu_819_p3   |  select  |      0|  0|  32|           1|           1|
+    |current_block_write_34_fu_827_p3   |  select  |      0|  0|  32|           1|          32|
+    |i_fu_448_p3                        |  select  |      0|  0|  14|           1|           1|
+    |read_block_13_fu_675_p3            |  select  |      0|  0|   5|           1|           5|
+    |select_ln105_fu_462_p3             |  select  |      0|  0|  32|           1|           1|
+    |select_ln144_1_fu_781_p3           |  select  |      0|  0|  32|           1|           1|
+    |select_ln144_fu_627_p3             |  select  |      0|  0|  32|           1|           1|
+    |select_ln160_fu_667_p3             |  select  |      0|  0|  32|           1|           1|
+    |select_ln172_fu_712_p3             |  select  |      0|  0|  32|           1|           1|
+    |ap_enable_pp0                      |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1            |    xor   |      0|  0|   2|           2|           1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0|1233|         962|         341|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+----+-----------+-----+-----------+
+    |               Name              | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                        |  44|          9|    1|          9|
+    |ap_done                          |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1          |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter3          |   9|          2|    1|          2|
+    |ap_sig_allocacmp_ofm_y_1_i_load  |   9|          2|   32|         64|
+    |count_simd_6_fu_120              |   9|          2|   32|         64|
+    |counter_internal_blo_fu_132      |   9|          2|   32|         64|
+    |current_block_write_30_fu_124    |  15|          3|   32|         96|
+    |current_line_12_fu_128           |  15|          3|   32|         96|
+    |i_0_i_reg_314                    |   9|          2|   14|         28|
+    |in_V_V_blk_n                     |   9|          2|    1|          2|
+    |indvar_flatten_reg_303           |   9|          2|   46|         92|
+    |inp_6_fu_112                     |  15|          3|   32|         96|
+    |inputBuf_0_V_address1            |  15|          3|    6|         18|
+    |inputBuf_1_V_address1            |  15|          3|    6|         18|
+    |inputBuf_2_V_address1            |  15|          3|    6|         18|
+    |inputBuf_3_V_address1            |  15|          3|    6|         18|
+    |k_x_6_fu_116                     |   9|          2|   32|         64|
+    |k_y_6_fu_108                     |   9|          2|   32|         64|
+    |numReps_blk_n                    |   9|          2|    1|          2|
+    |numReps_out_blk_n                |   9|          2|    1|          2|
+    |ofm_x_6_fu_104                   |   9|          2|   32|         64|
+    |ofm_y_1_i_fu_100                 |   9|          2|   32|         64|
+    |out_V_V_blk_n                    |   9|          2|    1|          2|
+    |read_block_12_fu_96              |  21|          4|   32|        128|
+    +---------------------------------+----+-----------+-----+-----------+
+    |Total                            | 314|         66|  444|       1079|
+    +---------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |and_ln153_reg_1051                |   1|   0|    1|          0|
+    |ap_CS_fsm                         |   8|   0|    8|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |bound_reg_968                     |  46|   0|   46|          0|
+    |count_simd_6_fu_120               |  32|   0|   32|          0|
+    |counter_internal_blo_fu_132       |  32|   0|   32|          0|
+    |current_block_write_30_fu_124     |  32|   0|   32|          0|
+    |current_line_12_fu_128            |  32|   0|   32|          0|
+    |i_0_i_reg_314                     |  14|   0|   14|          0|
+    |icmp_ln104_reg_973                |   1|   0|    1|          0|
+    |icmp_ln105_reg_982                |   1|   0|    1|          0|
+    |icmp_ln107_reg_992                |   1|   0|    1|          0|
+    |icmp_ln107_reg_992_pp0_iter2_reg  |   1|   0|    1|          0|
+    |icmp_ln113_reg_1060               |   1|   0|    1|          0|
+    |icmp_ln123_reg_996                |   1|   0|    1|          0|
+    |icmp_ln123_reg_996_pp0_iter2_reg  |   1|   0|    1|          0|
+    |icmp_ln132_reg_1025               |   1|   0|    1|          0|
+    |icmp_ln135_reg_1029               |   1|   0|    1|          0|
+    |icmp_ln138_reg_1033               |   1|   0|    1|          0|
+    |icmp_ln141_reg_1037               |   1|   0|    1|          0|
+    |icmp_ln144_reg_1046               |   1|   0|    1|          0|
+    |icmp_ln160_reg_1055               |   1|   0|    1|          0|
+    |indvar_flatten_reg_303            |  46|   0|   46|          0|
+    |inp_6_fu_112                      |  32|   0|   32|          0|
+    |k_x_6_fu_116                      |  32|   0|   32|          0|
+    |k_y_6_fu_108                      |  32|   0|   32|          0|
+    |numReps_read_reg_958              |  32|   0|   32|          0|
+    |ofm_x_6_fu_104                    |  32|   0|   32|          0|
+    |ofm_y_1_i_fu_100                  |  32|   0|   32|          0|
+    |ofm_y_reg_1041                    |  32|   0|   32|          0|
+    |outElem_V_reg_1064                |  32|   0|   32|          0|
+    |read_block_12_fu_96               |  32|   0|   32|          0|
+    |reg_392                           |  32|   0|   32|          0|
+    |trunc_ln124_reg_1000              |   2|   0|    2|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 583|   0|  583|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+----------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++--------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk              |  in |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|ap_rst              |  in |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|ap_start            |  in |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|ap_done             | out |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|ap_continue         |  in |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|ap_idle             | out |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|ap_ready            | out |    1| ap_ctrl_hs | ConvolutionInputGene | return value |
+|in_V_V_dout         |  in |   32|   ap_fifo  |        in_V_V        |    pointer   |
+|in_V_V_empty_n      |  in |    1|   ap_fifo  |        in_V_V        |    pointer   |
+|in_V_V_read         | out |    1|   ap_fifo  |        in_V_V        |    pointer   |
+|out_V_V_din         | out |   32|   ap_fifo  |        out_V_V       |    pointer   |
+|out_V_V_full_n      |  in |    1|   ap_fifo  |        out_V_V       |    pointer   |
+|out_V_V_write       | out |    1|   ap_fifo  |        out_V_V       |    pointer   |
+|numReps_dout        |  in |   32|   ap_fifo  |        numReps       |    pointer   |
+|numReps_empty_n     |  in |    1|   ap_fifo  |        numReps       |    pointer   |
+|numReps_read        | out |    1|   ap_fifo  |        numReps       |    pointer   |
+|numReps_out_din     | out |   32|   ap_fifo  |      numReps_out     |    pointer   |
+|numReps_out_full_n  |  in |    1|   ap_fifo  |      numReps_out     |    pointer   |
+|numReps_out_write   | out |    1|   ap_fifo  |      numReps_out     |    pointer   |
++--------------------+-----+-----+------------+----------------------+--------------+
+

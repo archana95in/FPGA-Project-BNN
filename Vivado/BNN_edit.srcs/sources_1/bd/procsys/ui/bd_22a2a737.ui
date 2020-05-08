@@ -1,0 +1,36 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.16411",
+   "Default View_TopLeft":"180,104",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 7 -x 2100 -y 260 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2100 -y 290 -defaultsOSRD
+preplace inst ps7 -pg 1 -lvl 6 -x 1840 -y 350 -defaultsOSRD
+preplace inst BlackBoxJam_0 -pg 1 -lvl 4 -x 1110 -y 200 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 5 -x 1480 -y 570 -defaultsOSRD
+preplace inst rst_ps7_100M -pg 1 -lvl 2 -x 420 -y 430 -defaultsOSRD
+preplace inst ps7_axi_periph -pg 1 -lvl 3 -x 770 -y 450 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 2 -x 420 -y 180 -defaultsOSRD
+preplace netloc ps7_FCLK_RESET0_N 1 1 6 60 -20 NJ -20 NJ -20 NJ -20 NJ -20 2070
+preplace netloc rst_ps7_100M_peripheral_aresetn 1 1 4 80 0 600 220 920 290 1280
+preplace netloc ps7_FCLK_CLK0 1 1 6 70 -10 610 200 930 300 1330 300 1620 200 2060
+preplace netloc ps7_axi_periph_M00_AXI 1 3 1 940 180n
+preplace netloc axi_mem_intercon_M00_AXI 1 5 1 1630 340n
+preplace netloc BlackBoxJam_0_m_axi_hostmem 1 4 1 1310 190n
+preplace netloc ps7_FIXED_IO 1 6 1 NJ 290
+preplace netloc ps7_M_AXI_GP0 1 2 5 620 280 NJ 280 1300J 210 NJ 210 2050
+preplace netloc ps7_DDR 1 6 1 2080J 260n
+preplace netloc axi_dma_0_M_AXI_S2MM 1 2 3 NJ 120 NJ 120 1290
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 1 2 100 20 590
+preplace netloc axi_dma_0_M_AXI_SG 1 2 3 NJ 80 NJ 80 1320
+preplace netloc ps7_axi_periph_M01_AXI 1 1 3 90 10 NJ 10 910
+preplace netloc axi_dma_0_M_AXI_MM2S 1 2 3 NJ 100 NJ 100 1340
+levelinfo -pg 1 -140 40 420 770 1110 1480 1840 2100
+pagesize -pg 1 -db -bbox -sgen -140 -90 2210 1030
+"
+}
+{
+   "da_axi4_cnt":"4"
+}

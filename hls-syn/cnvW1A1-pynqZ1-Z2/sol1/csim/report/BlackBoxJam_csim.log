@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../../../../library/host/rawhls-offload.cpp in debug mode
+   Compiling ../../../../../../../library/host/foldedmv-offload.cpp in debug mode
+   Compiling ../../../../../../cnvW1A1/sw/main_python.cpp in debug mode
+   Compiling ../../../../../../cnvW1A1/hw/top.cpp in debug mode
+   Generating csim.exe
+Setting network weights and thresholds in accelerator...
+Packing and interleaving CIFAR-10 inputs...
+Running prebuilt CIFAR-10 test for 1 images...
+Inference took 11730659 microseconds, 1.17307e+07 usec per image
+Classification rate: 0.0852467 images per second
+Detected class 4
+in 1.17307e+07 microseconds
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
